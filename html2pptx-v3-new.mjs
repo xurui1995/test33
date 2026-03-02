@@ -172,7 +172,7 @@ function extractElementsScript(containerSelector) {
     const baseStyle = window.getComputedStyle(el);
     for (const node of el.childNodes) {
       if (node.nodeType === Node.TEXT_NODE) {
-        const t = node.textContent.replace(/[ \t]+/g, ' ');
+        const t = node.textContent.replace(/\s+/g, ' ');
         if (t.trim()) {
           parts.push({
             text: t,
