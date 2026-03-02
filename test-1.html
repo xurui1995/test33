@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投融资趋势：资本从"技术幻觉"转向"商业实证"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #F8FAFC; font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            background-color: #F8FAFC;
+            overflow: hidden;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Gradient Mesh Background */
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 90%, rgba(30, 41, 59, 0.05) 0%, transparent 40%);
+            z-index: 0;
+        }
+
+        .header {
+            z-index: 1;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 300;
+            color: #64748B;
+            border-left: 3px solid #6366F1;
+            padding-left: 15px;
+        }
+
+        .content-grid {
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            flex-grow: 1;
+        }
+
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .concept-box {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .concept-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #6366F1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .concept-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #1E293B;
+            line-height: 1.3;
+        }
+
+        .concept-text span {
+            color: #94A3B8;
+            text-decoration: line-through;
+        }
+
+        .trend-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .trend-item {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .trend-item i {
+            color: #6366F1;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-left: 4px solid #6366F1;
+        }
+
+        .stat-card.secondary {
+            border-left-color: #1E293B;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #64748B;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .card-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: #1E293B;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .highlight {
+            color: #6366F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        
+        <div class="header">
+            <h2 class="title">投融资趋势：<br>资本从"技术幻觉"转向"商业实证"</h2>
+            <p class="subtitle">AI投融资呈现"中国复苏回稳"与"海外审慎重构"的分化</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="left-panel">
+                <div class="concept-box">
+                    <div class="concept-title">Capital Logic Shift</div>
+                    <div class="concept-text">
+                        从 <span>技术幻觉</span><br>
+                        转向 <strong style="color: #6366F1;">商业实证</strong>
+                    </div>
+                </div>
+                
+                <ul class="trend-list">
+                    <li class="trend-item">
+                        <i class="fas fa-arrow-right"></i>
+                        <div>
+                            <strong>一级市场：</strong>融资节奏加快，金额不断刷新纪录，2026年预计更多大模型公司将密集IPO。
+                        </div>
+                    </li>
+                    <li class="trend-item">
+                        <i class="fas fa-arrow-right"></i>
+                        <div>
+                            <strong>分化趋势：</strong>中国市场复苏回稳，海外市场审慎重构，资本更看重落地能力。
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right-panel">
+                <div class="stat-card">
+                    <div class="card-title">最大押注方向：具身智能</div>
+                    <div class="card-value highlight">337.7<span style="font-size: 24px;">亿元</span></div>
+                    <p class="card-desc">具身智能赛道融资总金额稳坐第一，成为资本新宠。</p>
+                </div>
+
+                <div class="stat-card secondary">
+                    <div class="card-title">市场信心风向标：智谱AI</div>
+                    <div class="card-value">3232<span style="font-size: 24px;">亿港元</span></div>
+                    <p class="card-desc">上市以来累计涨幅达<span class="highlight">524%</span>，市值实现5倍跃升。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
