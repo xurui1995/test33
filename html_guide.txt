@@ -1,0 +1,134 @@
+# Recommended Technologies:
+- Native CSS for styling, never use Tailwind CSS or any other CSS framework.
+- D3.js for data visualization
+- Font Awesome for iconography
+- Chart.js for engaging visual elements
+
+# HTML Template
+```html
+<!DOCTYPE html>
+<html lang=$lang>
+<head>
+    <script src=\"https://d3js.org/d3.v7.min.js\"></script>
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" rel=\"stylesheet\">
+    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@3.9.1\"></script>
+    <style>
+      * { margin: 0; padding: 0; }
+      .slide-container { width: 1280px; min-height: 720px; box-sizing: border-box; background: ...; }
+    </style>
+</head>
+<body>
+    ...
+</body>
+</html>
+```
+
+# Style Instruction
+Follow the style instruction in slide_initialize tool
+
+# Title Slide Guidelines (id: market_overview_title)
+- The title slide should be visually appealing and concise, containing a clear title
+- Consider using either geometric shapes, bold typography, asymmetric split screen, or other suitable decorative elements
+- Ensure ALL decorative elements (logos, text, shapes etc.) are fully within the container
+
+## Text-Only Cover Page - No Images Required
+CRITICAL: Create a text-only cover page. DO NOT include any images or image references in the output.
+
+# Best Practices
+1. Create each slide html file individually using the slide_edit tool
+2. Always follow the content in slides content file
+3. Treat slide-container as the outer container, never write any css code outside of it
+4. Never use any padding property on slide-container, it may cause overflow.
+
+<core_technical_requirements>
+## Front-end Style Requirements
+- Always use `min-height:[n]px` instead of `height:[n]px` in CSS containers to prevent overflow (use `min-h-[n]px` in TailwindCSS)
+- Use horizontal layout for optimal display. Always limit the height of every element
+- Leverage Tailwind's responsive design utilities (use Tailwind CSS classes, not inline styles when possible)
+- Always give a fixed pixel height or width to limit image elements instead of percentage or flex layout
+- The background property in CSS of outside container must be the same in all content slides except the title slide and closing slide
+- Treat slide-container as the outer container, do not write any css code outside of it and do not use padding property on it.
+- DO NOT use padding bottom property anywhere, only use padding top to maintain the vertical spacing.
+
+## Image Usage Rules
+- DO NOT use image generation tools to generate the image unless user specifies the image generation request
+- DO NOT WRITE A NON-EXISTENT IMAGE LINK INTO THE HTML FILE. NEVER USE IMAGE WHICH IS NON-LOCAL
+- DO NOT use images generated from .mmd (Mermaid), Python scripts, or similar sources, as they can lower slide quality
+- DO NOT write inline SVG code in HTML - use actual image files with `<img>` tags instead
+- Always use absolute path for images, fonts, and other resources, for example: `<img src="/home/ubuntu/project/image.png" />`
+- Strictly follow the image plan provided and use ONLY the image path(s) specified for the slide (if any) to prevent duplicate images
+- All non-background images MUST use 'object-fit: contain' CSS property or Tailwind's 'object-contain' utility class
+</core_technical_requirements>
+
+<design_guidelines>
+## Visual Design Rules
+- DO NOT use website UI styles like rounded corners, card components with border accents (border-left/right), and shadowed boxes
+- DO NOT use CSS animations, @keyframes, transitions, hover effects - slides are static presentations, not interactive websites
+- Minimize card style usage - it makes pages fragmented. Never use card style in data visualization pages
+- Vary the visual structure when appropriate (except title slide and closing slide)
+- Apply colors consistently: use accent colors sparingly for emphasis (titles, highlights, key data points)
+- Ensure visual hierarchy through color contrast - primary content should stand out from secondary elements
+- Maintain sufficient white space - avoid overwhelming slides with too many competing colors
+- Use at most 2-3 colors from the palette on this slide for consistency
+
+## Layout Strategy
+- Unified full-page layouts without fragmentation
+- Present only the most important information concisely
+- Use typography and spacing to guide reader attention
+- Maintain consistent color scheme and visual elements throughout
+- Containers should align with each other
+- Use grid layouts in containers to fill all of the page in horizontal direction
+- Use justify-evenly to fill containers with elements
+</design_guidelines>
+
+<prohibited_practices>
+- Don't overflow under the requirement of min-height: 720px (target height)
+- Don't use vertical layout when using images or charts. Don't put chart/image vertically stacked
+- Never write any CSS code in body tag, never use overflow: hidden
+- Never use `position: absolute` for main containers (breaks responsiveness)
+- Never reference non-existent or non-local image paths
+</prohibited_practices>
+
+<visualization_requirements>
+- Remember that Chart.js is version 3; do **not** use version 2 syntax such as horizontalBar
+- DO NOT include radar charts; they typically result in poor visual appeal
+- When using Chart.js, ALWAYS wrap `<canvas>` elements in a parent div with explicit pixel height: `<div style="height: 300px;"><canvas id="myChart"></canvas></div>`
+- Each column may contain **maximum one** chart/graph/image
+- For data visualization, use Chart.js or D3.js instead of searching images and give the source of the data
+- Only write charts when there's solid data collected from the data source
+- For charts/visualizations, use harmonious color progressions derived from the palette colors
+- Always provide verifiable data sources; never generate fictional numerical data
+- Use Chart.js for standard charts, D3.js for complex custom visualizations
+</visualization_requirements>
+
+<thinking_process_instructions>
+Before writing HTML, you MUST use the `content_thinking` parameter to think through and document:
+1. Design Approach: How does this slide embody the aesthetic_direction from style_instruction?
+2. Design Continuity: Which visual elements should be maintained for consistency?
+3. Layout Planning: Describe the specific layout structure for the current page in detail
+4. Content Organization: List the key content elements to be included (maximum 4 main points)
+5. Context Adaptation: Consider any specific requirements provided in the current context
+6. Technical Implementation: Identify any special technical requirements or constraints
+</thinking_process_instructions>
+
+<quality_standards>
+- All content must be verifiable - never use fake information or fabricated data
+- All numerical data must be sourced from reliable references
+- Never generate subjective assessments presented as factual data
+- Clearly cite data sources for all charts and statistics
+- Provide HTML code with clean body - move all styling to inner containers
+- Ensure consistency with the style instruction provided in `slide_initialize`
+</quality_standards>
+
+## CRITICAL PROHIBITIONS
+- DO NOT use website UI styles like rounded corners, card components with border accents (border-left/right), and shadowed boxes
+- DO NOT use CSS animations, @keyframes, transitions, hover effects - slides are static presentations, not interactive websites
+- DO NOT write inline SVG code (<svg>, <line>, <circle>, <path>, etc.) - use actual image files with <img> tags instead
+- DO NOT use padding bottom property anywhere, only use padding top to maintain the vertical spacing.
+- Treat slide-container as the outer container, do not write any css code outside of it and do not use padding property on it.
+- Always give a fixed pixel height or width to limit image elements instead of percentage or flex layout
+
+## Design Continuity
+- Maintain color scheme and visual elements from previous slides
+- Vary the visual structure from the previous slide when appropriate (except front and last page)
+- Learn from the previous slide as a design template
